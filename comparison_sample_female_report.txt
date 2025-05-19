@@ -1,0 +1,49 @@
+
+Scale FAM: T-score = 69
+Interpretation: This female reports significant family problems that substantially impact her emotional well-being. She describes family relationships characterized by persistent conflict, emotional disconnection, boundary violations, or failure to provide mutual support. Her narrative emphasizes experiences of feeling misunderstood, criticized, or actively undermined within her family system.
+
+Scale WRK: T-score = 75
+Interpretation: This female reports significant work interference that substantially impacts her occupational functioning. She describes persistent problems with concentration, motivation, or interpersonal relationships that frequently affect work performance. Her psychological symptoms create substantial challenges in maintaining consistent occupational functioning, potentially threatening job retention or advancement.
+
+Scale TRT: T-score = 77
+Interpretation: This female demonstrates significant negative treatment indicators that substantially impact therapeutic engagement. She reports marked skepticism about psychological intervention and minimal confidence in its potential effectiveness. She shows reluctance to accept personal responsibility in the change process and significant resistance to active engagement in treatment. She has difficulty identifying meaningful goals and often maintains unrealistic expectations about the treatment process.
+
+PSY-5 SCALES WITH SEX-SPECIFIC INTERPRETATIONS
+--------------------------------------------------------------------------------
+Scale AGGR: T-score = 65
+Interpretation: This female presents with significantly elevated aggressive tendencies. She describes herself as forceful, dominant, and confrontational in interpersonal situations. She frequently engages in power struggles and may use intimidation to achieve her goals. Her interpersonal style emphasizes control and dominance, with limited concern for others' feelings or perspectives. She likely has a history of conflicts across various settings due to her combative approach.
+
+Scale PSYC: T-score = 68
+Interpretation: This female presents with significantly elevated psychotic tendencies. She describes frequent unusual thought processes and perceptual experiences that substantially impact her functioning. She endorses magical thinking, ideas of reference, or special abilities that significantly deviate from conventional reality. Her reality testing is compromised even without obvious stressors, with persistent difficulty distinguishing internal from external stimuli. She may report experiences consistent with hallucinations or delusions.
+
+Scale DISC: T-score = 64
+Interpretation: This female presents with moderately elevated disconstraint tendencies. She describes herself as somewhat impulsive, sensation-seeking, and willing to bend rules when convenient. She may act without fully considering consequences, particularly when pursuing immediate gratification. Her approach to life emphasizes excitement and novelty, sometimes at the expense of stability and long-term planning.
+
+Scale NEGE: T-score = 75
+Interpretation: This female presents with significantly elevated negative emotionality. She describes herself as highly emotionally reactive, with persistent experiences of anxiety, worry, irritability, and other negative emotions that dominate her emotional landscape. She has substantial difficulty managing distressing emotions effectively and may remain dysregulated for extended periods. Her emotional responses frequently seem disproportionate to circumstances and significantly interfere with functioning across multiple domains.
+
+Scale INTR: T-score = 72
+Interpretation: This female presents with significantly elevated introversion. She describes herself as highly reserved, private, and disinterested in extensive social engagement. She finds interpersonal interaction draining and requires substantial recovery time after social events. She experiences positive emotions infrequently, with limited capacity for pleasure or enthusiasm across contexts. She strongly prefers solitude and may actively avoid social situations whenever possible.
+
+SUPPLEMENTARY SCALES WITH SEX-SPECIFIC INTERPRETATIONS
+--------------------------------------------------------------------------------
+Scale A: T-score = 72
+Interpretation: This female reports significant anxiety symptoms that substantially impact her daily functioning. She describes persistent worry, tension, and physiological arousal that interfere with concentration, decision-making, and performance. Her anxiety symptoms may include restlessness, muscle tension, autonomic hyperactivity, vigilance, and apprehension that create considerable subjective suffering.
+
+Scale R: T-score = 70
+Interpretation: This female demonstrates significant repression and denial that substantially impact her emotional awareness. She shows marked difficulty acknowledging or processing negative emotions, particularly anger or resentment. Her self-awareness regarding emotional states is severely limited, with strong tendency to externalize or somatize distress. She maintains a facade of adjustment that contrasts with objective indicators of psychological difficulty.
+
+Scale Es: T-score = 40
+Interpretation: This female demonstrates moderately low ego strength that creates noticeable limitations in adaptive functioning. She shows somewhat restricted psychological resources for managing stress and recovering from setbacks. Her coping mechanisms are inconsistently effective, with periodic reliance on maladaptive strategies. She demonstrates variable frustration tolerance and some difficulty maintaining emotional equilibrium with moderate stressors.
+
+Scale MAC-R: T-score = 65
+Interpretation: This female demonstrates significant risk for substance use problems. She reports markedly unconventional attitudes and behaviors regarding alcohol and other substances. She may acknowledge substantial problematic substance use or associated negative consequences. Her personality profile includes pronounced impulsivity, nonconformity, and risk-taking tendencies strongly associated with substance misuse.
+
+Scale AAS: T-score = 65
+Interpretation: This female reports significant acknowledgment of alcohol problems. She describes substantial problematic alcohol use with associated negative consequences. Her drinking patterns frequently exceed social norms and create persistent personal, interpersonal, or occupational difficulties. She may meet criteria for alcohol use disorder based on her self-reported symptoms.
+
+Scale APS: T-score = 67
+Interpretation: This female demonstrates significant potential for substance use problems. Her personality characteristics and reported behaviors suggest substantial vulnerability to developing problematic substance use patterns. She likely holds markedly unconventional attitudes toward substance use and shows persistent difficulties with impulse control.
+
+Scale MDS: T-score = 68
+Interpretation: This female reports significant marital distress that substantially impacts relationship functioning. She describes persistent patterns of conflict, communication breakdown, or emotional alienation with her partner. Her narrative emphasizes profound disappointment, frustration, or anger regarding unmet needs and expectations within the relationship. The relationship may be at risk for dissolution without intervention.

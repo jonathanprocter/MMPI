@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Entry - MMPI-2 Assessment Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        .header h1 {
+            margin: 0;
+            font-weight: 300;
+        }
+        .card {
+            margin-bottom: 20px;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #3498db;
+            color: white;
+            font-weight: 500;
+        }
+        .btn-primary {
+            background-color: #3498db;
+            border-color: #3498db;
+        }
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .scale-section {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 20px;
+        }
+        .scale-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .scale-row {
+            margin-bottom: 10px;
+        }
+        .scale-name {
+            font-weight: 500;
+        }
+        .form-range {
+            width: 100%;
+        }
+        .range-value {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .nav-tabs {
+            margin-bottom: 20px;
+        }
+        .nav-tabs .nav-link {
+            color: #3498db;
+        }
+        .nav-tabs .nav-link.active {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header text-center">
+            <h1>MMPI-2 Assessment Platform</h1>
+            <p class="lead">T-Score Entry</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="card">
+                    <div class="card-header">
+                        Enter MMPI-2 T-Scores
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ url_for('score_entry') }}" method="post">
+                            <ul class="nav nav-tabs" id="scaleTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="validity-tab" data-bs-toggle="tab" data-bs-target="#validity" type="button" role="tab" aria-controls="validity" aria-selected="true">Validity</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="clinical-tab" data-bs-toggle="tab" data-bs-target="#clinical" type="button" role="tab" aria-controls="clinical" aria-selected="false">Clinical</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="rc-tab" data-bs-toggle="tab" data-bs-target="#rc" type="button" role="tab" aria-controls="rc" aria-selected="false">RC Scales</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="content-tab" data-bs-toggle="tab" data-bs-target="#content" type="button" role="tab" aria-controls="content" aria-selected="false">Content</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="harris-tab" data-bs-toggle="tab" data-bs-target="#harris" type="button" role="tab" aria-controls="harris" aria-selected="false">Harris-Lingoes</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="psy5-tab" data-bs-toggle="tab" data-bs-target="#psy5" type="button" role="tab" aria-controls="psy5" aria-selected="false">PSY-5</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="supplementary-tab" data-bs-toggle="tab" data-bs-target="#supplementary" type="button" role="tab" aria-controls="supplementary" aria-selected="false">Supplementary</button>
+                                </li>
+                            </ul>
+                            
+                            <div class="tab-content" id="scaleTabsContent">
+                                <!-- Validity Scales -->
+                                <div class="tab-pane fade show active" id="validity" role="tabpanel" aria-labelledby="validity-tab">
+                                    <div class="scale-section">
+                                        <h3>Validity Scales</h3>
+                                        {% for scale, name in validity_scales_map.items() %}
+                                        <div class="row scale-row align-items-center">
+                                            <div class="col-md-3">
+                                                <span class="scale-name">{{ scale }} ({{ name }})</span>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <input type="range" class="form-range" min="30" max="120" value="50" id="{{ scale }}" name="{{ scale }}">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="range-value" id="{{ scale }}_value">50</span>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+                                <!-- Clinical Scales -->
+                                <div class="tab-pane fade" id="clinical" role="tabpanel" aria-labelledby="clinical-tab">
+                                    <div class="scale-section">
+                                        <h3>Clinical Scales</h3>
+                                        {% for scale, name in clinical_scales_map.items() %}
+                                        <div class="row scale-row align-items-center">
+                                            <div class="col-md-3">
+                                                <span class="scale-name">{{ scale }} ({{ name }})</span>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <input type="range" class="form-range" min="30" max="120" value="50" id="{{ scale }}" name="{{ scale }}">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="range-value" id="{{ scale }}_value">50</span>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+                                <!-- RC Scales -->
+                                <div class="tab-pane fade" id="rc" role="tabpanel" aria-labelledby="rc-tab">
+                                    <div class="scale-section">
+                                        <h3>Restructured Clinical (RC) Scales</h3>
+                                        {% for scale, name in rc_scales_map.items() %}
+                                        <div class="row scale-row align-items-center">
+                                            <div class="col-md-3">
+                                                <span class="scale-name">{{ scale }} ({{ rc_scales_full_names[scale] }})</span>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <input type="range" class="form-range" min="30" max="120" value="50" id="{{ scale }}" name="{{ scale }}">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="range-value" id="{{ scale }}_value">50</span>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+                                <!-- Content Scales -->
+                                <div class="tab-pane fade" id="content" role="tabpanel" aria-labelledby="content-tab">
+                                    <div class="scale-section">
+                                        <h3>Content Scales</h3>
+                                        {% for scale, name in content_scales_map.items() %}
+                                        <div class="row scale-row align-items-center">
+                                            <div class="col-md-3">
+                                                <span class="scale-name">{{ scale }} ({{ name }})</span>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <input type="range" class="form-range" min="30" max="120" value="50" id="{{ scale }}" name="{{ scale }}">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="range-value" id="{{ scale }}_value">50</span>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+                                <!-- Harris-Lingoes Subscales -->
+                                <div class="tab-pane fade" id="harris" role="tabpanel" aria-labelledby="harris-tab">
+                                    <div class="scale-section">
+                                        <h3>Harris-Lingoes Subscales</h3>
+                                        {% for scale, name in harris_lingoes_subscales_map.items() %}
+                                        <div class="row scale-row align-items-center">
+                                            <div class="col-md-3">
+                                                <span class="scale-name">{{ scale }} ({{ name }})</span>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <input type="range" class="form-range" min="30" max="120" value="50" id="{{ scale }}" name="{{ scale }}">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="range-value" id="{{ scale }}_value">50</span>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+                                <!-- PSY-5 Scales -->
+                                <div class="tab-pane fade" id="psy5" role="tabpanel" aria-labelledby="psy5-tab">
+                                    <div class="scale-section">
+                                        <h3>PSY-5 Scales</h3>
+                                        {% for scale, name in psy5_scales_map.items() %}
+                                        <div class="row scale-row align-items-center">
+                                            <div class="col-md-3">
+                                                <span class="scale-name">{{ scale }} ({{ name }})</span>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <input type="range" class="form-range" min="30" max="120" value="50" id="{{ scale }}" name="{{ scale }}">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="range-value" id="{{ scale }}_value">50</span>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+                                <!-- Supplementary Scales -->
+                                <div class="tab-pane fade" id="supplementary" role="tabpanel" aria-labelledby="supplementary-tab">
+                                    <div class="scale-section">
+                                        <h3>Supplementary Scales</h3>
+                                        {% for scale, name in supplementary_scales_map.items() %}
+                                        <div class="row scale-row align-items-center">
+                                            <div class="col-md-3">
+                                                <span class="scale-name">{{ scale }} ({{ name }})</span>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <input type="range" class="form-range" min="30" max="120" value="50" id="{{ scale }}" name="{{ scale }}">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="range-value" id="{{ scale }}_value">50</span>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Generate Report</button>
+                                <a href="{{ url_for('client_info') }}" class="btn btn-outline-secondary">Back to Client Info</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>MMPI-2 Assessment Platform &copy; 2025</p>
+        </footer>
+    </div>
+
+(Content truncated due to size limit. Use line ranges to read in chunks)
