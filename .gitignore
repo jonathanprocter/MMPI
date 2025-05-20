@@ -1,0 +1,7 @@
+# Ignore generated reports and related files
+*.pdf
+*.png
+*.zip
+
+# Ignore directory for generated reports
+reports/
