@@ -1,8 +1,2 @@
-"""
-Initialize the mmpi_platform package.
-"""
-
-# Make all modules available for import
-__all__ = [
-    'src'
-]
+"""MMPI package root."""
+__all__ = ['constants', 'interpretation', 'models', 'reporting']
