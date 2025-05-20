@@ -58,6 +58,8 @@ This web application provides a comprehensive platform for administering, scorin
 4. **Using the Application**
    - Enter client information (name, age, sex, etc.)
    - Input T-scores for all relevant scales
+   - Alternatively, open the legacy questionnaire via `/mmpi_test` to complete
+     the full MMPI-2 in your browser
    - Generate comprehensive report
    - View and download reports in multiple formats
 
