@@ -216,7 +216,7 @@ def report_file(report_id, filename):
 @app.route('/mmpi_test', methods=['GET'])
 def mmpi_test():
     """Serve the legacy MMPI HTML questionnaire."""
-    return send_from_directory('.', 'mmpi copy.html')
+    return send_from_directory('.', 'mmpi_copy.html')
 
 @app.route('/sample_data', methods=['GET'])
 def sample_data():
