@@ -285,86 +285,10 @@ clinical information for a comprehensive assessment.
 """
 
     def generate_html_report(self, profile):
-        """Generate an HTML report for the given profile."""
+        """Generate a minimal HTML report (placeholder)."""
         text_report = self.generate_text_report(profile)
-        html_content = f"""
-<!DOCTYPE html>
-<html>
-<head>
-    <title>MMPI-2 Psychological Assessment Report</title>
-    <style>
-        body {{ font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; }}
-        h1, h2, h3 {{ color: #2c3e50; }}
-        h1 {{ text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px; }}
-        h2 {{ border-bottom: 1px solid #bdc3c7; padding-bottom: 5px; margin-top: 30px; }}
-        .section {{ margin-bottom: 20px; }}
-        .scale-elevation {{ color: #c0392b; font-weight: bold; }}
-        .summary {{ background-color: #f8f9fa; padding: 15px; border-left: 4px solid #3498db; }}
-        table {{ border-collapse: collapse; width: 100%; margin: 20px 0; }}
-        th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
-        th {{ background-color: #f2f2f2; }}
-        tr:nth-child(even) {{ background-color: #f9f9f9; }}
-    </style>
-</head>
-<body>
-    <h1>MMPI-2 Psychological Assessment Report</h1>
-    
-    <div class="section">
-        <h2>Identifying Information</h2>
-        <p><strong>Name:</strong> {profile['name']}</p>
-        <p><strong>Gender:</strong> {profile['gender']}</p>
-        <p><strong>Age:</strong> {profile['age']}</p>
-        <p><strong>Date of Testing:</strong> {profile['date_tested']}</p>
-    </div>
-    
-    <div class="section">
-        <h2>Validity Scales Summary</h2>
-        <p>The validity scales indicate a valid profile with some defensiveness (L=68, K=65). 
-        The client responded to all items in a consistent manner (VRIN=55, TRIN=52).
-        The F scale (62) suggests some psychological distress but within acceptable limits.</p>
-    </div>
-    
-    <div class="section">
-        <h2>Clinical Scales Summary</h2>
-        <p>The client presents with significant elevations on multiple clinical scales:</p>
-        <ul>
-            <li><span class="scale-elevation">Scale 2 (Depression): T=82</span> - Severe depressive symptoms</li>
-            <li><span class="scale-elevation">Scale 7 (Psychasthenia): T=85</span> - Severe anxiety and obsessive thinking</li>
-            <li><span class="scale-elevation">Scale 8 (Schizophrenia): T=80</span> - Significant thought disturbance</li>
-            <li><span class="scale-elevation">Scale 1 (Hypochondriasis): T=78</span> - Somatic concerns and health preoccupation</li>
-            <li><span class="scale-elevation">Scale 3 (Hysteria): T=75</span> - Emotional distress with somatic manifestations</li>
-            <li><span class="scale-elevation">Scale 6 (Paranoia): T=74</span> - Suspiciousness and interpersonal sensitivity</li>
-            <li><span class="scale-elevation">Scale 0 (Social Introversion): T=72</span> - Social withdrawal and discomfort</li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <h2>Two-Point Code Analysis</h2>
-        <p>The <span class="scale-elevation">2-7/7-2 code type</span> indicates a person experiencing severe anxiety and depression.
-        Individuals with this profile often experience persistent worry, rumination, and
-        feelings of inadequacy. They tend to be perfectionistic, self-critical, and have
-        difficulty making decisions. Interpersonal relationships are often characterized
-        by dependency and fear of rejection.</p>
-    </div>
-    
-    <div class="section">
-        <h2>Harris-Lingoes Subscales</h2>
-        <p>The Harris-Lingoes subscales provide additional insight into the nature of the
-        client's psychological distress:</p>
-        
-        <h3>Depression Subscales:</h3>
-        <ul>
-            <li><span class="scale-elevation">D1 (Subjective Depression): T=80</span> - Feelings of unhappiness and dissatisfaction</li>
-            <li><span class="scale-elevation">D2 (Psychomotor Retardation): T=75</span> - Low energy and fatigue</li>
-            <li><span class="scale-elevation">D3 (Physical Malfunctioning): T=72</span> - Physical complaints and health concerns</li>
-            <li><span class="scale-elevation">D4 (Mental Dullness): T=78</span> - Difficulty concentrating and making decisions</li>
-            <li><span class="scale-elevation">D5 (Brooding): T=82</span> - Rumination and excessive worry</li>
-        </ul>
-        
-        <h3>Schizophrenia Subscales:</h3>
-        <ul>
-            <li><span class="scale-elevation">Sc1 (Social Alienation): T=75</span> - Feelings of misunderstanding and isolation</li>
-            <li><span class="scale-elevation">Sc2 (Emotional Alienation): T=78</span> - Emotional detachment and blunted affect</li>
-            <li><span class="scale-elevation">Sc3 (Lack of Ego Mastery, Cognitive): T=80</span> - Difficulty with thought processes</li>
-            <
-(Content truncated due to size limit. Use line ranges to read in chunks)
+        path = os.path.join(output_dir, "clinical_sample_report.html")
+        with open(path, "w") as f:
+            f.write(f"<pre>{text_report}</pre>")
+        return path
+

@@ -420,5 +420,17 @@ def generate_scale_family_graphs(profile_data, output_dir):
         
         plt.figure(figsize=(12, 6))
         plt.bar(sc_subscales, sc_scores, color='mediumpurple')
-        plt.axhline(y=65, color='r', linestyle='
-(Content truncated due to size limit. Use line ranges to read in chunks)
+        plt.axhline(y=65, color='r', linestyle='-', alpha=0.7, label='Clinical Significance Threshold')
+        plt.title('Schizophrenia (Scale 8) Harris-Lingoes Subscales', fontsize=16)
+        plt.ylabel('T-Score', fontsize=14)
+        plt.ylim(0, 120)
+        plt.grid(axis='y', linestyle='--', alpha=0.7)
+        plt.legend()
+
+        for i, score in enumerate(sc_scores):
+            plt.text(i, score + 2, str(score), ha='center', fontsize=12)
+
+        pdf.savefig()
+        plt.close()
+
+    return pdf_path

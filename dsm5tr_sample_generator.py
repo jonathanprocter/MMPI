@@ -339,6 +339,10 @@ def create_profile_graphs(profile_data, output_dir):
         plt.close()
 
 def save_report(report, output_dir):
-    """
-    Save the report in various
-(Content truncated due to size limit. Use line ranges to read in chunks)
+    """Save the generated report to the output directory."""
+    os.makedirs(output_dir, exist_ok=True)
+    path = os.path.join(output_dir, "dsm5tr_sample_report.txt")
+    with open(path, "w") as f:
+        f.write(report)
+    return path
+

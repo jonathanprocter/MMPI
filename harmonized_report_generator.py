@@ -397,6 +397,10 @@ def generate_html_report(profile_data, graph_paths, harmonized_narrative):
         "harris_lingoes": "The Harris-Lingoes subscales provide additional detail about the clinical scale elevations. The D1 (Subjective Depression) and D2 (Psychomotor Retardation) elevations confirm significant depressive symptoms. The Sc3 (Lack of Ego Mastery, Cognitive) and Sc6 (Bizarre Sensory Experiences) elevations suggest cognitive difficulties and possible unusual perceptual experiences under stress.",
         
         "content": "The Content scales show significant elevations on ANX (Anxiety, T=78), DEP (Depression, T=80), and LSE (Low Self-Esteem, T=75). These elevations are consistent with the clinical scale findings and suggest significant anxiety, depression, and negative self-evaluation. The WRK (Work Interference, T=75) elevation indicates that these symptoms are likely affecting occupational functioning.",
-        
-        "rc": "The RC scales show significant elevations on RCd (Demoralization, T
-(Content truncated due to size limit. Use line ranges to read in chunks)
+
+        "rc": "The RC scales show significant elevations on RCd (Demoralization, T=75), RC2 (Low Positive Emotions, T=75), and RC7 (Dysfunctional Negative Emotions, T=80). These findings align with the clinical scales and indicate marked distress.",
+
+        "psy5": "The PSY-5 scales highlight broad personality dimensions consistent with the overall clinical picture."
+    }
+
+    return summaries
