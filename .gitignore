@@ -1,0 +1,5 @@
+# Ignore binary assets
+binary_assets/
+*.pdf
+*.png
+*.zip
