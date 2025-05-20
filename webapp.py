@@ -22,15 +22,21 @@ from src.constants.scale_constants import (
     CONTENT_SCALES_MAP, RC_SCALES_MAP, PSY5_SCALES_MAP, SUPPLEMENTARY_SCALES_MAP
 )
 
-# Create Flask app
+# Create Flask app instance
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
-app.config['UPLOAD_FOLDER'] = 'uploads'
-app.config['REPORT_FOLDER'] = 'reports'
 
-# Ensure upload and report directories exist
-os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-os.makedirs(app.config['REPORT_FOLDER'], exist_ok=True)
+def create_app():
+    """Configure and return the Flask application."""
+    # Read configuration from environment variables with sensible defaults
+    app.secret_key = os.environ.get('SECRET_KEY', os.urandom(24))
+    app.config['UPLOAD_FOLDER'] = os.environ.get('UPLOAD_FOLDER', 'uploads')
+    app.config['REPORT_FOLDER'] = os.environ.get('REPORT_FOLDER', 'reports')
+
+    # Ensure upload and report directories exist
+    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+    os.makedirs(app.config['REPORT_FOLDER'], exist_ok=True)
+
+    return app
 
 # RC Scale full names mapping
 RC_SCALES_FULL_NAMES = {
@@ -309,4 +315,5 @@ def clear_session():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
+    create_app()
     app.run(debug=True, host='0.0.0.0', port=5000)
