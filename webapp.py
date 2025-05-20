@@ -212,6 +212,12 @@ def report_file(report_id, filename):
     report_dir = os.path.join(app.config['REPORT_FOLDER'], report_id)
     return send_from_directory(report_dir, filename)
 
+# Serve the original MMPI questionnaire page
+@app.route('/mmpi_test', methods=['GET'])
+def mmpi_test():
+    """Serve the legacy MMPI HTML questionnaire."""
+    return send_from_directory('.', 'mmpi copy.html')
+
 @app.route('/sample_data', methods=['GET'])
 def sample_data():
     """Load sample data for demonstration."""
