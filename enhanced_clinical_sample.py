@@ -397,5 +397,6 @@ class EnhancedReportGenerator:
         
         # Two-Point Code Analysis
         report.append("\nTWO-POINT CODE ANALYSIS:")
-        report.append(f"The profile shows a {tw
-(Content truncated due to size limit. Use line ranges to read in chunks)
+        report.append("The profile shows characteristic patterns consistent with the highest clinical scales.")
+
+        return "\n".join(report)

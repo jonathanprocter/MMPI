@@ -334,11 +334,6 @@ class ReportGenerator:
         if not elevated_scales:
             return "No clinically significant elevations were found on the Restructured Clinical scales. All scales are within normal limits, suggesting absence of significant core psychopathology in these domains."
         
-        # Categorize elevations
-        demoralization = any(code == "RCd" for code, _ in elevated_scales)
-        somatic = any(code == "RC1" for code, _ in elevated_scales)
-        low_positive_emotions = any(code == "RC2" for code, _ in elevated_scales)
-        cynicism = any(code == "RC3" for code, _ in elevated_scales)
-        antisocial = any(code == "RC4" for code, _ in elevated_scales)
-        persecution = any(code == "RC6" for code, _ in e
-(Content truncated due to size limit. Use line ranges to read in chunks)
+        # Simplified placeholder logic
+        return "RC scale summary placeholder."
+

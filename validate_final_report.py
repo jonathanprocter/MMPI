@@ -418,15 +418,12 @@ def generate_scale_family_graphs(profile_data, output_dir):
     
     return graph_files
 
+
 def generate_comprehensive_report(profile_data, output_dir):
-    """
-    Generate a comprehensive MMPI-2 report with narrative interpretations,
-    embedded graphs, and DSM-5-TR diagnostic impressions.
-    
-    Args:
-        profile_data (dict): The profile data dictionary
-        output_dir (Path): Directory to save the report
-        
-    Returns:
-        dict: Paths to the generated report fi
-(Content truncated due to size limit. Use line ranges to read in chunks)
+    """Placeholder implementation for generating a comprehensive report."""
+    os.makedirs(output_dir, exist_ok=True)
+    path = os.path.join(output_dir, "final_report.txt")
+    with open(path, "w") as f:
+        f.write("Report generation not fully implemented.")
+    return {"text": path}
+

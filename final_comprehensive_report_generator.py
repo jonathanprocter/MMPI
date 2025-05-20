@@ -410,5 +410,10 @@ def create_scale_family_graphs(profile_data, output_file):
         ax.set_ylabel('T-Score')
         ax.set_title('Harris-Lingoes Subscales')
         ax.set_ylim(0, 120)
-       
-(Content truncated due to size limit. Use line ranges to read in chunks)
+        ax.grid(axis='y', linestyle='--', alpha=0.7)
+        ax.legend()
+        plt.tight_layout()
+        pdf.savefig()
+        plt.close()
+
+    return output_file
