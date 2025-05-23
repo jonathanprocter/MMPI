@@ -25,7 +25,7 @@ from src.constants.scale_constants import (
 # Create Flask app
 # HTML templates now live in the standard ./templates directory
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+app.secret_key = os.environ.get('SECRET_KEY', 'dev_secret_key')
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['REPORT_FOLDER'] = 'reports'
 

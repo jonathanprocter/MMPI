@@ -1,0 +1,94 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Python virtual environment
+venv/
+*.venv
+.env
+env/
+ENV/
+
+# Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.idea/
+.vscode/
+
+# Archives and large document files (likely examples or non-app resources)
+*.zip
+*.docx
+MMPI Manus.zip # Specific example from ls()
+567-MMPI_questions-1.docx # Specific example from ls()
+www_kerry-lyn_com.zip # Specific example from ls()
+mmpi_platform_self_hosting.zip # Specific example from ls()
+Using Uploaded Information in AI Prompts.zip # Specific example from ls()
+
+# Screenshots (likely documentation/dev artifacts)
+Screenshot*.png
+
+# Example reports in the root directory.
+# The application generates reports into the 'reports' directory inside the container.
+# These root-level reports are assumed to be examples or test outputs.
+# (If any specific report here IS served statically by name, it should be removed from this list)
+clinical_profile_graphs.pdf
+clinical_sample_report.html
+clinical_sample_report.pdf
+clinical_sample_report.txt
+comparison_sample_female_report.pdf
+comparison_sample_female_report.txt
+comparison_sample_female_traditional_profile_graph.png
+comparison_sample_male_report.pdf
+comparison_sample_male_report.txt
+comparison_sample_male_traditional_profile_graph.png
+comprehensive_report.pdf # Example: comprehensive_report.txt is used in a test
+# comprehensive_report.txt # Used in test_comprehensive_report_generator.py, keep for now if tests run in Docker
+dsm5tr_sample_report.pdf
+embedded_graphs_report.html
+embedded_graphs_report.pdf
+enhanced_clinical_report.html
+enhanced_clinical_report.pdf
+# enhanced_clinical_report.txt # Used in test_enhanced_clinical_report.py, keep for now
+final_comprehensive_report.html
+final_comprehensive_report.pdf
+# final_comprehensive_report.txt # Used in test_final_comprehensive_report_generator.py, keep for now
+revised_clinical_report.html
+revised_clinical_report.pdf
+# revised_clinical_report.txt # Used in test_revised_clinical_report.py, keep for now
+scale_family_graphs.pdf
+traditional_profile_graph.pdf
+traditional_profile_graph.png # Example: traditional_profile_graph.png is used in a test
+
+# HTML copies in root, except mmpi_copy.html which is served
+mmpi copy-17.html
+mmpi copy-18.html
+mmpi copy-19.html
+
+# Local development/testing artifacts if any
+*.log
+local_settings.py
+pasted_content.txt # Example from ls()
+pasted_content_2.txt # Example from ls()
+pasted_content_3.txt # Example from ls()
+
+# Do not ignore test files yet, they might be run in a later Docker stage or for verification.
+# If any .py files are truly standalone utility scripts not imported by the webapp,
+# they could be ignored, but it's safer to include them for now. Examples:
+# create_clinical_sample.py
+# dsm5tr_sample_generator.py
+# etc.
